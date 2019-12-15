@@ -1,5 +1,7 @@
 // jquery code goes here
 
+$( document ).ready(function() {
+
 
 //*************************** POST REQUEST *********************************//
 
@@ -39,35 +41,7 @@ $burgerSubmitBtn.on("click", handleBurgerInfoDelivery);
 
 // 3. Render's the list of note titles past from the db
 let renderBurgerList = function(data) {
-  console.log(data);
-  let burgers = document.querySelector("#burgersDBdata #burgers");
-  let burgersDevoured = document.querySelector("#burgersDBdata #burgersDevoured");
-
-  burgers.innerHTML = '';
-  burgersDevoured.innerHTML = '';
-
-  let burgersArray = [];
-  let burgersDevouredArray = [];
-
-  data.forEach((burger) => {
-    if(burger.devoured === 0){
-      burgersArray.push(burger)
-    }else if(burger.devoured === 1){
-      burgersDevouredArray.push(burger)
-    }
-  });
-
-  console.log(burgersArray);
-
-  burgersArray.forEach((burger) => {
-    console.log('I am running');
-    let li = document.createElement('li');
-    li.innerHTML = burger.burger_name;
-    li.setAttribute('data-id', burger.id);
-    burgers.appendChild(li);
-  });
-
-
+  location.reload();
 };
 
 
@@ -87,3 +61,39 @@ let getAndRenderBurgers = function() {
 };
 
 //getAndRenderBurgers();
+
+//*************************** PUT REQUEST *********************************//
+
+// 2. A function for updating a burger from the db
+var putBurger = function(id) {
+  return $.ajax({
+    url: "/api/burgers/" + id,
+    method: "PUT"
+  });
+};
+
+// 1. Click the burger
+var handleBurgerPut = function(id) {
+  // prevents the click listener for the list from being called when the button inside of it is clicked
+
+  putBurger(id).then(function() {
+    location.reload();
+  });
+};
+
+
+//***************************  INITIAL SETUP  ******************************************/
+
+(function () {
+  // Set initial 
+  let burgersMenu = document.querySelectorAll("#burgersDBdata #burgers div button");
+  //console.log(burgersMenu);
+  
+  burgersMenu.forEach((burger) =>{
+    burger.addEventListener("click", function() { handleBurgerPut(this.getAttribute('data-id')) });
+  });
+  
+}());
+
+
+});

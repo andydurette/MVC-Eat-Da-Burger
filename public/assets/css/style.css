@@ -72,9 +72,28 @@ font-family: 'Roboto', sans-serif;
   text-align:center;
 }
 
-#burgersDBdata div ol{
+#burgersDBdata div #burgers > div{
   margin: 0 auto;
   width: 200px;
   text-align: left;
+  display:flex;
+  justify-content: space-evenly;
+  border: 2px solid #666;
+  margin: 5px;
+  background-color:white;
+  padding:5px;
 }
+
+#burgersDBdata div #burgers > div p{
+  text-align:center;
+}
+
+#burgersDBdata div #burgers > div button{
+  cursor:pointer;
+}
+
+#burgersDBdata div #burgers div > *{
+  width:125px;
+}
+
 
