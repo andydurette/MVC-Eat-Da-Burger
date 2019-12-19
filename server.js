@@ -178,7 +178,6 @@ app.delete('/api/burgers/', (req, res) => {
     res.send(successMessage);
   });
 
-
 })
 
 // End of request Handling
