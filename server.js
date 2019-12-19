@@ -47,8 +47,15 @@ app.get("/", function(req, res) {
   
       data.forEach(item => {
         if(item.devoured === 0){
+          let str = String(item.id);
+          let strDigitDrop = str.substring(0, str.length - 1);
+          item.display_id = parseInt(strDigitDrop);
+          console.log(item);
           orderedBurgers.push(item);
         }else{
+          let str = String(item.id);
+          let strDigitDrop = str.substring(0, str.length - 1);
+          item.display_id = parseInt(strDigitDrop);
           devouredBurgers.push(item); 
         }
       })  
@@ -104,7 +111,18 @@ app.get('/api/burgers', (req, res) => {
       return res.status(500).end();
     }
     connection.end();
-    res.send(data);
+
+    data.forEach(item => {
+      if(String(item.id).length > 1){
+        //console.log(String(item.id).length);
+        let str = String(item.id);
+        let strDigitDrop = str.substring(0, str.length - 1);
+        item.display_Id = parseInt(strDigitDrop);
+      }
+    })  
+    
+    console.log(data);
+      res.send(data);
   });
 });
 
