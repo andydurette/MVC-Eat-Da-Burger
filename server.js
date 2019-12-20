@@ -120,8 +120,6 @@ app.get('/api/burgers', (req, res) => {
         item.display_Id = parseInt(strDigitDrop);
       }
     })  
-    
-    console.log(data);
       res.send(data);
   });
 });
