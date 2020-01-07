@@ -11,8 +11,11 @@ Live Link at: https://eat-all-da-burger.herokuapp.com/
 Steps in site revolve around using crud operators to create and clear a list of burger orders.
 
 Create: using the form.
+
 Read: Diplay the data in the view.
+
 Update: With devour button.
+
 Delete: With the reset orders button.
 
 ![markdown-image](public/assets/images/markdown-preview-image.png)
