@@ -3,7 +3,7 @@ Assignment 11 for UfT fullstack bootcamp focusing on making an MVC app using nod
 
 ## Getting Started
 
-Inside this repo there are mysql seed files to build a starting repo, the logic has been set for a clearDB configuration on heroku.
+Inside this repo there are mysql seed files to build a starting repo, the logic has been set for a clearDB configuration on heroku. <br />
 Live Link at: https://eat-all-da-burger.herokuapp.com/
 
 ## Site Goals
