@@ -9,10 +9,10 @@ const mysql = require('mysql');
 
 // Create Connection
 const db_config = {
-  host: 'us-cdbr-iron-east-05.cleardb.net',
-  user: 'baff9b29011800',
-  password: 'eadc8d19',
-  database: 'heroku_27dc7e1957ed417',
+  host: 'nba02whlntki5w2p.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'jistvo33ylqfn41m',
+  password: 'd7dffzj4q5nz8kqq',
+  database: 'daj99ebjlhgapx9n',
   port:3306
 };
 
